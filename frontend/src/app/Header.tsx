@@ -12,7 +12,7 @@ const Header: React.FC = () => {
             {/* 左端のImage */}
             <Link href="/">
               <div className="flex items-center justify-start h-full">
-                <Image src="/images/人物アイコン　チーム.png" alt="left" width={50} height={50} />
+                <Image src="/images/people_alt_25dp_000000.png" alt="left" width={50} height={50} />
               </div>
             </Link>
 

@@ -1,17 +1,21 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="fixed bottom-0 w-full bg-white py-4">
-      <div className="flex justify-center space-x-8">
-        {/* Image 1 */}
-        <Image src="/images/image1.png" alt="Image 1" width={50} height={50} />
+    <footer className="fixed bottom-0 w-full bg-white py-10 z-20">
+      <div className="flex justify-center gap-72">
+        <Link href={"/"}>
+          <Image src="/images/home_24dp_000000.png" alt="home" width={40} height={40} />
+        </Link>
 
-        {/* Image 2 */}
-        <Image src="/images/image2.png" alt="Image 2" width={50} height={50} />
+        <Link href={"/"}>
+          <Image src="/images/auto_stories_25dp_000000.png" alt="diary" width={40} height={40} />
+        </Link>
 
-        {/* Image 3 */}
-        <Image src="/images/image3.png" alt="Image 3" width={50} height={50} />
+        <Link href={"/"}>
+          <Image src="/images/calendar_month_25dp_000000.png" alt="calender" width={40} height={40} />
+        </Link>
       </div>
     </footer>
   );

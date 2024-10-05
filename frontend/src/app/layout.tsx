@@ -1,8 +1,7 @@
+// RootLayout.tsx
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Header from "./Header";
-import Footer from "./Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -22,17 +21,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  showHeaderFooter = true,
 }: Readonly<{
   children: React.ReactNode;
-  showHeaderFooter?: boolean;
 }>) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {showHeaderFooter && <Header />}
-        <main className="relative z-10 flex justify-center items-center min-h-screen">{children}</main>
-        {showHeaderFooter && <Footer />}
+        <main className="">{children}</main>
       </body>
     </html>
   );

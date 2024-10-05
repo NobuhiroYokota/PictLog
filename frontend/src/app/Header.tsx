@@ -24,7 +24,7 @@ const Header: React.FC = () => {
             </div>
 
             {/* 右端のImage */}
-            <Link href="/">
+            <Link href="/Mypage">
               <div className="flex items-center justify-end h-full">
                 <div className="avatar">
                   <div className="w-12 rounded-full">

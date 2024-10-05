@@ -13,10 +13,20 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@as-integrations/fastify": "^2.1.1",
+    "@nestjs/apollo": "^12.2.0",
     "@nestjs/common": "^10.4.4",
     "@nestjs/core": "^10.4.4",
+    "@nestjs/graphql": "^12.2.0",
     "@nestjs/platform-express": "^10.4.4",
+    "@nestjs/platform-fastify": "^10.4.4",
     "@prisma/client": "^5.20.0",
+    "apollo-server-express": "^3.13.0",
+    "fastify": "^4.28.1",
+    "graphql": "^16.9.0",
+    "mercurius": "^14.1.0",
+    "nestjs-prisma": "^0.23.0",
+    "prisma-nestjs-graphql": "^20.0.3",
     "rxjs": "^7.8.1"
   },
   "devDependencies": {
@@ -26,7 +36,7 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.6.2"
   },
-  "prisma":{
+  "prisma": {
     "seed": "ts-node prisma/seed.ts"
   }
 }

@@ -6,13 +6,23 @@ import { User } from './user.entity'
 export class UserService {
     constructor(private prisma: PrismaService){}
 
-    findAll(): Promise<User[]>{
-        return this.prisma.user.findMany();
-    }
+ 
+    findAll(): Promise<User[]> {
+        return this.prisma.user.findMany({
+          include: { posts: true }, // postsを含める
+        });
+      }
 
-    findOne(id:number): Promise<User | null>{
+      findOne(id: number): Promise<User | null> {
         return this.prisma.user.findUnique({
-            where:{ id },
-        })
+          where: { id },
+          include: { posts: true }, // postsを含める
+        });
+      }
+
+      async findPostsByUserId(userId: number) {
+        return this.prisma.post.findMany({
+          where: { userId },
+        });
     }
 }

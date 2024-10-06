@@ -1,7 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { User } from './user.entity'
-
+import { Post } from '../post/entities/post.entity'
+ 
 @Injectable()
 export class UserService {
     constructor(private prisma: PrismaService){}
@@ -25,4 +26,8 @@ export class UserService {
           where: { userId },
         });
     }
+
+    async findPostByUserIdAndPostId(userId: number, postId: number): Promise<Post | null> {
+        return this.prisma.post.findFirst({ where: { id: postId, userId } });
+      }
 }

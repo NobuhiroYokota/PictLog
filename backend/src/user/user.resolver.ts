@@ -30,4 +30,10 @@ export class UserResolver {
   async posts(@Parent() user: User) {
     return this.userService.findPostsByUserId(user.id);
   }
+
+    // 特定のIDの投稿をリゾルブ
+  @ResolveField(() => Post, { nullable: true }) // 追加: Post型をリターンする、nullableにすることで無い場合も考慮
+  async post(@Parent() user: User, @Args('id', { type: () => Int }) id: number) {
+    return this.userService.findPostByUserIdAndPostId(user.id, id);
+  }
 }

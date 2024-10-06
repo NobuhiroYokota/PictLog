@@ -10,4 +10,7 @@ export class User {
 
   @Field() // emailはString型かつ一意
   email: string;
+
+  @Field()
+  password: string;
 }

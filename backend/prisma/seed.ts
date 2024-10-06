@@ -6,6 +6,17 @@ const postData: Prisma.UserCreateInput[]= [
     {
         name: 'yamada',
         email:'example11@gmail.com',
+        password:'0123',
+        posts : {
+          create:[
+            {
+              imageUrl:"https://example.com/images/post1.jpg"
+            },
+            {
+              imageUrl : "https://example.com/images/post2.jpg"
+            }
+          ]
+        }
     },
 ];
 

@@ -4,6 +4,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo'; // ApolloDriv
 import { PrismaModule } from './prisma/prisma.module'; // PrismaModuleをインポート
 import { UserModule } from './user/user.module'; // UserModuleをインポート
 import { join } from 'path';
+import { PostModule } from './post/post.module';
 
 @Module({
   imports: [
@@ -11,7 +12,7 @@ import { join } from 'path';
       driver: ApolloDriver, // ドライバーを指定
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'), // スキーマファイルの生成先
     }),
-    PrismaModule, UserModule
+    PrismaModule, UserModule, PostModule
   ],
 })
 export class AppModule {}

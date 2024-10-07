@@ -1,4 +1,4 @@
-import { Resolver, Query, Args, Int, ResolveField, Parent } from '@nestjs/graphql';
+import { Resolver, Query, Mutation, Args, Int, ResolveField, Parent } from '@nestjs/graphql';
 import { UserService } from './user.service'; // ユーザーサービスをインポート
 import { User } from './user.entity'; // エンティティをインポート
 import { Post } from '../post/entities/post.entity'; // Postエンティティをインポート（必要に応じて）
@@ -19,10 +19,13 @@ export class UserResolver {
     return this.userService.findOne(id);
   }
 
-  // 空のクエリフィールドを追加
-  @Query(() => String)
-  hello() {
-    return 'Hello World!';
+  @Mutation(() => User)
+  createUser(
+    @Args('name') name: string,
+    @Args('email') email: string,
+    @Args('password') password: string,
+  ) {
+    return this.userService.createUser(name, email, password);
   }
 
   // postsフィールドをリゾルブ
@@ -37,3 +40,4 @@ export class UserResolver {
     return this.userService.findPostByUserIdAndPostId(user.id, id);
   }
 }
+

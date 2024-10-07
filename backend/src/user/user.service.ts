@@ -14,14 +14,25 @@ export class UserService {
         });
       }
 
-      findOne(id: number): Promise<User | null> {
+    findOne(id: number): Promise<User | null> {
         return this.prisma.user.findUnique({
           where: { id },
           include: { posts: true }, // postsを含める
         });
       }
 
-      async findPostsByUserId(userId: number) {
+    async createUser(name: string, email: string, password: string): Promise<User>{
+      return  this.prisma.user.create({
+        data:{
+          name,
+          email,
+          password,
+        },
+      });
+    }
+      
+
+    async findPostsByUserId(userId: number) {
         return this.prisma.post.findMany({
           where: { userId },
         });

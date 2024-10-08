@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { CreatePostInput } from './dto/create-post.input';
 import { UpdatePostInput } from './dto/update-post.input';
-import { Post } from '@prisma/client';
+import { Post } from '../post/entities/post.entity'; // Postエンティティをインポート（必要に応じて）
 
 @Injectable()
 export class PostService {

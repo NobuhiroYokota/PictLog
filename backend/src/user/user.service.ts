@@ -1,13 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { User } from './user.entity'
-import { Post } from '../post/entities/post.entity'
- 
+import { Post } from '@prisma/client'
+
 @Injectable()
 export class UserService {
     constructor(private prisma: PrismaService){}
 
- 
     findAll(): Promise<User[]> {
         return this.prisma.user.findMany({
           include: { posts: true }, // postsを含める
@@ -30,7 +29,7 @@ export class UserService {
         },
       });
     }
-      
+
 
     async findPostsByUserId(userId: number) {
         return this.prisma.post.findMany({

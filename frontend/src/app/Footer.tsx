@@ -9,11 +9,11 @@ const Footer: React.FC = () => {
           <Image src="/images/home_24dp_000000.png" alt="home" width={40} height={40} />
         </Link>
 
-        <Link href={"/"}>
+        <Link href={"/PostDiary"}>
           <Image src="/images/auto_stories_25dp_000000.png" alt="diary" width={40} height={40} />
         </Link>
 
-        <Link href={"/"}>
+        <Link href={"/VeiwPost"}>
           <Image src="/images/calendar_month_25dp_000000.png" alt="calender" width={40} height={40} />
         </Link>
       </div>

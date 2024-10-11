@@ -5,6 +5,7 @@ import { PrismaModule } from './prisma/prisma.module'; // PrismaModuleをイン�
 import { UserModule } from './user/user.module'; // UserModuleをインポート
 import { join } from 'path';
 import { PostModule } from './post/post.module';
+import { DiaryModule } from './diary/diary.module';
 
 @Module({
   imports: [
@@ -12,7 +13,10 @@ import { PostModule } from './post/post.module';
       driver: ApolloDriver, // ドライバーを指定
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'), // スキーマファイルの生成先
     }),
-    PrismaModule, UserModule, PostModule
+    PrismaModule, 
+    UserModule,
+    PostModule,
+    DiaryModule
   ],
 })
 export class AppModule {}

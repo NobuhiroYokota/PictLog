@@ -33,3 +33,8 @@ model Post{
   userId    Int
   createAt DateTime @default(now())
 }
+
+model Diary{
+  id  Int @id @default(autoincrement())
+  diaryUrl String
+}

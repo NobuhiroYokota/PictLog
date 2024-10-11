@@ -23,6 +23,11 @@ A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date
 """
 scalar DateTime
 
+type Diary {
+  id: Int!
+  diaryUrl: String!
+}
+
 type Query {
   users: [User!]!
   user(id: Int!): User!
@@ -35,6 +40,7 @@ type Mutation {
   createPost(createPostInput: CreatePostInput!): Post!
   updatePost(updatePostInput: UpdatePostInput!): Post!
   removePost(id: Int!): Post!
+  createDiary(createDiaryInput: CreateDiaryInput!): Diary!
 }
 
 input CreatePostInput {
@@ -46,4 +52,8 @@ input UpdatePostInput {
   id: Int!
   imageUrl: String
   userId: Int
+}
+
+input CreateDiaryInput {
+  diaryUrl: String!
 }
